@@ -28,10 +28,8 @@ public class MyList<T> {
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
-        data[--size] = 0; // Clear last element
-        if (size > 0 && size == data.length / 4) {
-            resize(data.length / 2); // removing extra space by shrinking if space was not used
-        }
+        data[--size] = 0; 
+        
     }
 
     // Deletes an element based on its value
@@ -78,8 +76,7 @@ public class MyList<T> {
 
     public static void main(String[] args) {
         MyList<Integer> integerList = new MyList<>();
-        
-        // Adding elements
+       
         integerList.add(10);
         integerList.add(20);
         integerList.add(30);
@@ -88,7 +85,6 @@ public class MyList<T> {
         integerList.add(60);
         integerList.printList();
 
-        // Deleting by index
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter index to delete");
         int index=sc.nextInt();
@@ -96,17 +92,15 @@ public class MyList<T> {
         System.out.println("After deleting index :");
         integerList.printList();
 
-        // Deleting by value
         System.out.println("Enter value to delete");
         int value=sc.nextInt();
         integerList.deleteByValue(value);
         System.out.println("After deleting value :");
         integerList.printList();
 
-        // Retrieve element
         System.out.println("Enter index to retrieve");
         int ind=sc.nextInt();
-        System.out.println("Element at index 1: " + integerList.get(ind));
+        System.out.println("Element at index : " + integerList.get(ind));
         sc.close();
     }
 }
