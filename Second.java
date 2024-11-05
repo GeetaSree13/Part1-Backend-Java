@@ -1,6 +1,22 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
+//custom class
+class Student{
+    String name;
+    int rollno;
+    public Student(String name,int rollno){
+        this.name=name;
+        this.rollno=rollno;
+    }
+
+    @Override
+    public String toString() {
+        return name +" : "+ rollno;
+    }
+    
+}
+
 public class MyList<T> {
     private Object[] data;
     private int size;
@@ -12,9 +28,6 @@ public class MyList<T> {
 
     // Adds a new value to the list
     public void add(T value) {
-        if (size == data.length) {
-            resize(data.length * 2); // Double the size if full similar to arrayList
-        }
         data[size++] = value;
     }
 
@@ -24,12 +37,10 @@ public class MyList<T> {
             System.out.println("Index out of bounds");
             return;
         }
-        // Shift elements to the left to fill the gap
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
         data[--size] = 0; 
-        
     }
 
     // Deletes an element based on its value
@@ -76,7 +87,7 @@ public class MyList<T> {
 
     public static void main(String[] args) {
         MyList<Integer> integerList = new MyList<>();
-       
+        
         integerList.add(10);
         integerList.add(20);
         integerList.add(30);
@@ -85,22 +96,59 @@ public class MyList<T> {
         integerList.add(60);
         integerList.printList();
 
+        MyList<String> stringList = new MyList<>();
+        stringList.add("A");
+        stringList.add("B");
+        stringList.add("C");
+        stringList.add("D");
+        stringList.add("E");
+        stringList.add("F");
+        stringList.printList();
+
+        MyList<Student> studentList = new MyList<>();
+        studentList.add(new Student("P", 20));
+        studentList.add(new Student("Q", 25));
+        studentList.add(new Student("R", 35));
+        studentList.add(new Student("S", 30));
+        studentList.add(new Student("T", 40));
+        studentList.printList();
+
+        // Deleting by index
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter index to delete");
         int index=sc.nextInt();
         integerList.deleteByIndex(index);
-        System.out.println("After deleting index :");
+        stringList.deleteByIndex(index);
+        studentList.deleteByIndex(index);
+        System.out.println("After deleting index Integer list:");
         integerList.printList();
+        System.out.println("After deleting index string list:");
+        stringList.printList();
+        System.out.println("After deleting index student list:");
+        studentList.printList();
 
+        // Deleting by value
         System.out.println("Enter value to delete");
         int value=sc.nextInt();
+        String s=sc.next();
+        String n=sc.next();
+        int r=sc.nextInt();
         integerList.deleteByValue(value);
-        System.out.println("After deleting value :");
+        stringList.deleteByValue(s);
+        studentList.deleteByValue(new Student(n, r));
+        System.out.println("After deleting value integer list:");
         integerList.printList();
+        System.out.println("After deleting index string list:");
+        stringList.printList();
+        System.out.println("After deleting index student list:");
+        studentList.printList();
 
+        // Retrieve element
         System.out.println("Enter index to retrieve");
         int ind=sc.nextInt();
         System.out.println("Element at index : " + integerList.get(ind));
+        System.out.println("Element at index : " + stringList.get(ind));
+        System.out.println("data at index : " + studentList.get(ind));
         sc.close();
     }
 }
