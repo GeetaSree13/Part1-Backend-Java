@@ -24,14 +24,10 @@ public class MyList {
             System.out.println("Index out of bounds");
             return;
         }
-        // Shift elements to the left to fill the gap
         for (int i = index; i < size - 1; i++) {
             data[i] = data[i + 1];
         }
-        data[--size] = 0; // Clear last element
-        if (size > 0 && size == data.length / 4) {
-            resize(data.length / 2); // removing extra space by shrinking if space was not used
-        }
+        data[--size] = 0; 
     }
 
     // Deletes an element based on its value
@@ -39,7 +35,8 @@ public class MyList {
         int index = indexOf(value);
         if (index == -1) {
             System.out.println("Value not found in the list");
-        } else {
+        }
+        else {
             deleteByIndex(index);
         }
     }
@@ -77,8 +74,6 @@ public class MyList {
 
     public static void main(String[] args) {
         MyList myList = new MyList();
-        
-        // Adding elements
         myList.add(10);
         myList.add(20);
         myList.add(30);
@@ -86,8 +81,7 @@ public class MyList {
         myList.add(50);
         myList.add(60);
         myList.printList();
-
-        // Deleting by index
+        
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter index to delete");
         int index=sc.nextInt();
@@ -95,14 +89,12 @@ public class MyList {
         System.out.println("After deleting index :");
         myList.printList();
 
-        // Deleting by value
         System.out.println("Enter value to delete");
         int value=sc.nextInt();
         myList.deleteByValue(value);
         System.out.println("After deleting value :");
         myList.printList();
 
-        // Retrieve element
         System.out.println("Enter index to retrieve");
         int ind=sc.nextInt();
         System.out.println("Element at index 1: " + myList.get(ind));
