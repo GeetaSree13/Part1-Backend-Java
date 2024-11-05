@@ -1,4 +1,5 @@
-//Write code that throws a custom exception if the given number has more than one digit. Catch the exception and print an appropriate message.
+//Write code that throws a custom exception if the given number has more than one digit. 
+//Catch the exception and print an appropriate message.
 
 import java.util.*;
 public class MyException extends Exception {
