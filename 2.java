@@ -1,3 +1,9 @@
+//Implement a generic MyList class with a member that holds a generic array of size 100.
+//This class should support the following operations: adding a new value, deleting an element based on its index,
+//deleting an element based on its value, and retrieving a value from a specific index. 
+//The class should be capable of creating lists for Integer, String, and custom classes. 
+//Use the same structure as the previous class and make it generic.
+
 import java.util.Arrays;
 import java.util.Scanner;
 
