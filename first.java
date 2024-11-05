@@ -97,7 +97,7 @@ public class MyList {
 
         System.out.println("Enter index to retrieve");
         int ind=sc.nextInt();
-        System.out.println("Element at index 1: " + myList.get(ind));
+        System.out.println("Element at index : " + myList.get(ind));
         sc.close();
     }
 }
