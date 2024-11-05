@@ -1,3 +1,9 @@
+//Implement a MyList class that contains an integer array of size 100 as a member. 
+//This class should support the following operations: adding a new value,
+//deleting an element based on its index,deleting an element based on its value, and retrieving a value from a specific index. 
+//The array should dynamically grow, similar to an ArrayList, when more data is added, and shrink when data is deleted.
+
+
 import java.util.Arrays;
 import java.util.Scanner;
 
