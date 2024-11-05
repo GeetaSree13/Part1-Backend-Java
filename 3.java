@@ -1,4 +1,5 @@
-//Create a class named Employee with the following fields: id (String), name (String), age (int), and dateOfJoining (Date). Use this Employee object with the previously implemented MyList class.
+//Create a class named Employee with the following fields: id (String), name (String), age (int), and dateOfJoining (Date).
+//Use this Employee object with the previously implemented MyList class.
 
 import java.time.LocalDate;
 import java.util.*;
